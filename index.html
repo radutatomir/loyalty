@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app='loyalty'>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<title>Loyalty Car Wash</title>
+
+	<!-- bower:css -->
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<!-- endbower -->
+
+	<!-- inject:css -->
+	<!-- endinject -->
+
+
+</head>
+<body>
+
+	<div ng-controller='mainController as mainCtrl'>
+		<h1>Home</h1>
+
+		<form name='form'>
+			{{form}}
+
+			<div class="span3">
+				<label for="">Card number</label>
+				<input type="text" class="input-block-level" ng-model="number" payments-validate="card" payments-format="card" payments-type-model="type" ng-class="myForm.number.$card.type"/>
+			</div>
+
+			<div class="span1">
+				<label for="">Expiry</label>
+				<input type="text" class="input-block-level" ng-model="expiry" payments-validate="expiry" payments-format="expiry" />
+			</div>
+
+			<div class="span3">
+				<label for="">Name on card </label>
+				<input type="text" class="input-block-level">
+			</div>
+
+			<div class="span1">
+				<label for="">CVC</label>
+				<input type="text" class="input-block-level" ng-model="cvc" payments-validate="cvc" payments-format="cvc" payments-type-model="type"/>
+			</div>
+		</form>
+
+	</div>
+
+
+
+
+
+	<!-- bower:js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular-payments/lib/angular-payments.js"></script>
+	<!-- endbower -->
+
+	<!-- inject:js -->
+	<script src="app/app.js"></script>
+	<script src="app/controllers/main.controller.js"></script>
+	<!-- endinject -->
+</body>
+</html>
