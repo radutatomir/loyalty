@@ -1,61 +1,149 @@
-<!doctype html>
-<html ng-app='loyalty'>
+<!DOCTYPE html>
+<html lang="en" ng-app='loyalty'>
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 	<title>Loyalty Car Wash</title>
-
-	<!-- bower:css -->
+	
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<!-- bower:css -->
+	<link rel='stylesheet' href='bower_components/components-font-awesome/css/font-awesome.css' />
+	<link rel='stylesheet' href='bower_components/animate.css/animate.css' />
 	<!-- endbower -->
-
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/responsive.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+	
 	<!-- inject:css -->
 	<!-- endinject -->
 
-
+	<script src="js/modernizr.js"></script>
+	<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-
-	<div ng-controller='mainController as mainCtrl'>
-		<h1>Home</h1>
-
-		<form name='form'>
-			{{form}}
-
-			<div class="span3">
-				<label for="">Card number</label>
-				<input type="text" class="input-block-level" ng-model="number" payments-validate="card" payments-format="card" payments-type-model="type" ng-class="myForm.number.$card.type"/>
+	<!-- ====================================================
+	header section -->
+	<header class="top-header">
+		<div class="container">
+			<div class="row">
+				<!-- nav starts here -->
+				<div class="col-md-12">					
+					<nav class="navbar navbar-default">
+						<div class="container-fluid nav-bar">
+						    <div class="navbar-header">
+						      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button>
+						      <a href="index.html"><img src="img/rsz_logo2.png" style='height: 50px' alt="" class="img-responsive logo"></a>
+						    </div>
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						      <ul class="nav navbar-nav navbar-right">
+						        <li><a href="#home">Home</a></li>
+						        <li><a href="#features">Features</a></li>
+						        <li><a href="#about">About</a></li>
+						        <li><a href="#testimonials">Testimonials</a></li>
+						        <li><a href="#pricing">Pricing</a></li>
+						        <li><a href="#contact">Contact</a></li>
+						      </ul>
+						    </div>
+						</div>
+					</nav>
+				</div>
 			</div>
+		</div>
+	</header><!-- end of header section -->
 
-			<div class="span1">
-				<label for="">Expiry</label>
-				<input type="text" class="input-block-level" ng-model="expiry" payments-validate="expiry" payments-format="expiry" />
+	<!-- banner section starts here -->
+	<section class="banner" id="home" ng-include='"app/views/home.view.html"'>
+	</section><!-- end of banner section -->
+
+	<!-- feature sectiona -->
+	<section class="features text-center" id="features" ng-include='"app/views/features.view.html"'>
+	</section><!-- end of features section -->
+	<hr>
+	<!-- details section -->
+	<section class="details" id="about" ng-include='"app/views/about.view.html"'>
+	</section><!-- end of details section -->
+
+	<!-- features details section -->
+	<section class="feature-detail" ng-include='"app/views/feature-detail.view.html"'>
+	</section><!-- end of features-detail section -->
+
+	<!-- pricing-slide section starts here -->
+	<section class="pricing-slide" id="testimonials" ng-include='"app/views/testimonials.view.html"'>
+	</section><!-- end of pricing-slide section -->
+
+	<!-- find section -->
+	<section class="download" ng-include='"app/views/download.view.html"'>
+	</section><!-- end of find section -->
+
+	<!-- price-plan section -->
+	<section class="price-plan text-center" id="pricing" ng-include='"app/views/pricing.view.html"'>
+	</section><!-- end of price-plan section -->
+
+	<!-- contact section -->
+	<section class="contact text-center" id="contact" ng-include='"app/views/contact.view.html"'>
+	</section><!-- end of contact section -->
+
+	<!-- google map api -->
+	<div class="map">
+		<div class="container-fluid">
+			<div class="row">
+				<div id="map"></div> <!-- api map -->
 			</div>
-
-			<div class="span3">
-				<label for="">Name on card </label>
-				<input type="text" class="input-block-level">
-			</div>
-
-			<div class="span1">
-				<label for="">CVC</label>
-				<input type="text" class="input-block-level" ng-model="cvc" payments-validate="cvc" payments-format="cvc" payments-type-model="type"/>
-			</div>
-		</form>
-
+		</div>
 	</div>
+		
+	<!-- footer starts here -->
+	<footer class="footer text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="icons">
+						<a href=""><i class="fa fa-behance"></i></a>
+						<a href=""><i class="fa fa-dribbble"></i></a>
+						<a href=""><i class="fa fa-twitter"></i></a>
+						<a href=""><i class="fa fa-facebook"></i></a>
+						<a href=""><i class="fa fa-linkedin"></i></a>
+					</div>
+					<p>COPYRIGHT &copy; 2015 <a href="#">Mostafizur Rahman</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
-
-
-
+	<!-- script tags
+	============================================================= -->
+	
+	
+	<script src="js/wow.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="js/gmaps.js"></script>
+	<script>
+	    var map = new GMaps({
+	      el: '#map',
+	      lat: -12.043333,
+	      lng: -77.028333
+	    });
+	</script>
 
 	<!-- bower:js -->
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="bower_components/angular-payments/lib/angular-payments.js"></script>
+	<script src="bower_components/smooth-scroll/dist/js/smooth-scroll.js"></script>
 	<!-- endbower -->
+
+	<script src="js/custom.js"></script>
 
 	<!-- inject:js -->
 	<script src="app/app.js"></script>
