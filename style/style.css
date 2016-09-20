@@ -42,11 +42,11 @@ h1 .thin {
 	font-weight: 300;
 }
 .animated {
-  animation-duration: 3s;
-  -webkit-animation-duration: 3s;
-  -moz-animation-duration: 3s;
-  -ms-animation-duration: 3s;
-  -o-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-animation-duration: 3s;
+	-moz-animation-duration: 3s;
+	-ms-animation-duration: 3s;
+	-o-animation-duration: 3s;
 }
 /*header area*/
 .top-header{
@@ -54,7 +54,7 @@ h1 .thin {
 	position: fixed;
 	width: 100%;
 	z-index: 999;
-		transition: all .7s ease 0s;
+	transition: all .7s ease 0s;
 	-webkit-transition: all .7s ease 0s;
 	-moz-transition: all .7s ease 0s;
 	-o-transition: all .7s ease 0s;
@@ -69,9 +69,9 @@ h1 .thin {
 	-ms-transition: all .7s ease 0s;
 }
 .navbar-default {
-  background-color: transparent;
-  border-color: transparent;
-  margin-bottom: 0;
+	background-color: transparent;
+	border-color: transparent;
+	margin-bottom: 0;
 }
 .nav-bar{
 	margin-top: 28px;
@@ -89,7 +89,7 @@ ul.nav{
 	padding: 0;
 }
 .navbar-default .navbar-nav>li>a {
- 	font-size: 16px;
+	font-size: 16px;
 	color: #fff;
 	text-transform: capitalize;
 	transition: all .7s ease 0s;
@@ -110,7 +110,7 @@ ul.nav{
 	border-bottom: 2px solid #008ed6;
 }
 .navbar-default .navbar-toggle {
-  border-color: #fff;
+	border-color: #fff;
 }
 
 /*banner area*/
@@ -167,9 +167,9 @@ ul.nav{
 	margin-bottom: 105px;
 	font-weight: 600;
 	-moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 .features-btn:hover {
@@ -194,16 +194,16 @@ ul.nav{
 	color: #008ed6;
 	font-weight: 700;
 	width: 100px;
-	  height: 100px;
-	  border: 1px solid #e1e1e1;
-	  line-height: 4;
-	  border-radius: 50%;
-	  cursor: pointer;
-	  transition: all .7s ease 0s;
-	  -webkit-transition: all .7s ease 0s;
-	  -moz-transition: all .7s ease 0s;
-	  -o-transition: all .7s ease 0s;
-	  -ms-transition: all .7s ease 0s;
+	height: 100px;
+	border: 1px solid #e1e1e1;
+	line-height: 4;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all .7s ease 0s;
+	-webkit-transition: all .7s ease 0s;
+	-moz-transition: all .7s ease 0s;
+	-o-transition: all .7s ease 0s;
+	-ms-transition: all .7s ease 0s;
 }
 .features i.fa:hover{
 	color: #fff;
@@ -372,11 +372,11 @@ ul.nav{
 	font-weight: 600;
 }
 .table-price p{
-  font-size: 18px;
-  color: #999999;
-  line-height: 1;
-  margin-bottom: 22px;
-  transition:all .5s ease 0s;
+	font-size: 18px;
+	color: #999999;
+	line-height: 1;
+	margin-bottom: 22px;
+	transition:all .5s ease 0s;
 	-webkit-transition:all .5s ease 0s;
 	-moz-transition:all .5s ease 0s;
 	-o-transition:all .5s ease 0s;
@@ -553,4 +553,61 @@ ul.nav{
 }
 .footer p a:hover{
 	color: #008ed6;
+}
+
+#portfolio .portfolio-heading {
+	text-align: center;
+}
+
+#portfolio .portfolio-heading img {
+	margin: auto;
+	margin-bottom: 70px;
+}
+
+#portfolio .container-fluid .col-lg-4 {
+	padding-left: 0;
+	padding-right: 0;
+}
+#portfolio .portfolio-box {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	max-width: 650px;
+}
+#portfolio .portfolio-box .portfolio-box-caption {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	opacity: 0;
+	background: rgba(13, 13, 13, 0.6);
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+#portfolio .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	transform: translateY(-50%);
+}
+#portfolio .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+#portfolio .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+	padding: 0 15px;
+}
+#portfolio .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: 700;
+}
+#portfolio .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+	font-size: 18px;
+}
+#portfolio .portfolio-box:hover .portfolio-box-caption {
+	opacity: 1;
 }
