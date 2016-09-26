@@ -282,6 +282,9 @@ ul.nav{
 	margin-top: 60px;
 	margin-bottom: 25px;
 }
+.pricing-slide .carousel-inner {
+	height: 500px;
+}
 .item img{
 	float: left;
 	margin-right: 20px;
