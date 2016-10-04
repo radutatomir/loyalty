@@ -7,6 +7,5 @@
 	function mainController() {
 		var ctrl = this;
 
-		console.log(123);
 	}
 })();

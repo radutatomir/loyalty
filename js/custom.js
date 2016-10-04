@@ -10,6 +10,15 @@ jQuery(document).ready(function() {
         lng: -77.028333
       });
 
+   new google.maps.places.Autocomplete(document.getElementById("address"));
+
+   $('#date').datetimepicker({
+      format : 'DD/MM/YYYY',
+      minDate : moment(),
+      showTodayButton : true,
+      showClose : true
+   });
+
 
       //this code is for smooth scroll and nav selector
             $(document).ready(function () {

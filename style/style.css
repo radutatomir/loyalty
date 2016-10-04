@@ -642,3 +642,42 @@ ul.nav{
     margin-top: 60px;
     margin-bottom: 25px;
 }
+
+.wash-type h4 {
+	margin-top: 10px;
+}
+
+.wash-type label {
+	color : #fff;
+	margin-right: 10px;
+}
+
+.wash-type input {
+	height: initial;
+	width: initial;
+}
+
+.service-list {
+	margin-top: 50px;
+	text-align: left;
+}
+
+.hd-wax	{
+	border : 2px solid #008ed6;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-left: 10px;
+	width: 290px;
+}
+
+.hd-wax label {
+	margin-bottom: 0px;
+}
+
+.total {
+	color : #fff;
+}
+
+.contact-form .submit-btn {
+	margin-top: 50px;
+}
