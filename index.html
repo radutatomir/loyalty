@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
 	<title>Loyalty Car Wash</title>
 
 	
@@ -28,9 +28,9 @@
 	<!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body ng-controller='mainController as mainCtrl'>
+      <![endif]-->
+  </head>
+  <body ng-controller='mainController as mainCtrl'>
 	<!-- ====================================================
 	header section -->
 	<header class="top-header">
@@ -40,26 +40,26 @@
 				<div class="col-md-12">					
 					<nav class="navbar navbar-default">
 						<div class="container-fluid nav-bar">
-						    <div class="navbar-header">
-						      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						        <span class="sr-only">Toggle navigation</span>
-						        <span class="icon-bar"></span>
-						        <span class="icon-bar"></span>
-						        <span class="icon-bar"></span>
-						      </button>
-						      <a href="index.html"><img src="" alt="" class="img-responsive logo"></a>
-						    </div>
-						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						      <ul class="nav navbar-nav navbar-right">
-						        <li><a href="#home">Home</a></li>
-						        <li><a href="#features">Features</a></li>
-						        <li><a href="#about-us">About</a></li>
-						        <li><a href="#testimonials">Testimonials</a></li>
-						        <li><a href="#portfolio">Gallery</a></li>
-						        <li><a href="#pricing">Pricing</a></li>
-						        <li><a href="#contact">Contact</a></li>
-						      </ul>
-						    </div>
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<a href="index.html"><img src="" alt="" class="img-responsive logo"></a>
+							</div>
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav navbar-right">
+									<li><a href="#home">Home</a></li>
+									<li><a href="#features">Features</a></li>
+									<li><a href="#about-us">About</a></li>
+									<li><a href="#testimonials">Testimonials</a></li>
+									<li><a href="#portfolio">Gallery</a></li>
+									<li><a href="#pricing">Pricing</a></li>
+									<li><a href="#contact">Contact</a></li>
+								</ul>
+							</div>
 						</div>
 					</nav>
 				</div>
@@ -93,35 +93,233 @@
 	</section><!-- end of price-plan section -->
 
 	<!-- contact section -->
-	<section class="contact text-center" id="contact" ng-include='"app/views/contact.view.html"'>
-	</section><!-- end of contact section -->
+	<!-- <section class="contact text-center" id="contact" ng-include='"app/views/contact.view.html"'>
+</section> -->
 
-	<!-- google map api -->
-	<div class="map">
-		<div class="container-fluid">
-			<div class="row">
-				<div id="map"></div> <!-- api map -->
+
+<section class="contact text-center" id="contact">
+	<div class="container" ng-controller='bookingController as bookCtrl'>
+		<div class="row">
+			<div class="contact-heading">
+				<h4>get your car washed</h4>
+				<h2>Book us</h2>
+				<img class="img-responsive" src="img/daag.png" alt="">
+			</div>
+			<div class="col-md-3 col-xs-4 col-sm-4">
+				<i class="fa fa-phone"></i>
+				<p>Office: 0800 069 93 13</p>
+				<p>Mobile: 07588949199</p>
+			</div>
+			<div class="col-md-6 col-xs-4 col-sm-4">
+				<i class="fa fa-calendar"></i>
+				<p>8 am - 4 pm Winter time Monday - Saturday</p>
+				<p>8 am - 7 pm Summer time Monday - Saturday</p>
+				<p>Sunday closed</p>
+			</div>
+			<div class="col-md-3 col-xs-4 col-sm-4 clearfix">
+				<i class="fa fa-envelope-o"></i>
+				<p>info@loyaltycarwash.co.uk</p>
+			</div>
+			<div class="col-md-12 col-xs-12 col-sm-12">
+				<article class="contact-form">
+					<form action="/your-server-side-code" method="GET">
+						<div class="col-md-8">
+							<div class="col-md-5 col-md-offset-1 contact-form-left">
+								<input class="name" type="text" name='name' placeholder="NAME*">
+								<input class="phone" type="text" name='phone' placeholder="PHONE*">
+								<input class="email" type="email" name='email' placeholder="EMAIL">
+							</div>
+							<div class="col-md-5 contact-form-right text-right">
+								<input class="make-model" type="text" name='model' placeholder="MAKE AND MODEL*">
+								<input class="registration" type="text" name='registration' placeholder="REGISTRATION*">
+								<input class="colour" type="text" name='colour' placeholder="COLOUR">
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								
+								<input type="text" class="address" id="address" name="address" placeholder="ADDRESS*" />
+								<textarea name="notes" class="notes" placeholder="NOTES" rows="2"></textarea>
+							</div>
+							<div class="col-md-5 col-md-offset-1">
+								<input placeholder="DATE" name='date' id="date">
+							</div>
+							<div class="col-md-5 text-right">
+								<select name='time'>
+									<option value="0">Anytime 8am-7pm</option>
+									<option value="8">08:00-12:00</option>
+									<option value="12">12:00-16:00</option>
+									<option value="16">16:00-19:00</option>
+								</select>
+							</div>
+
+							<script
+							src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+							data-key="pk_test_cK02zWG0mJvqLSGkEKWQKQuB"
+							data-amount="999"
+							data-name="Loyalty Car Wash"
+							data-description="Booking"
+							data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+							data-locale="auto">
+							</script>
+
+							<input type="submit" class="submit-btn" value="pay cash" style="margin-right: 20px;">
+							<input type="submit" class="submit-btn" value="pay now">
+
+
+						</div>
+						<div class="col-md-4">
+							<div class="service-list">
+								<div class="wash-type">
+									<h4>Express wash</h4>
+									<label>
+										<input type='radio' name='package' value='expressSmall' ng-model='bookCtrl.package'/>
+										<span>Small</span>
+										<span class="label label-info">£15</span>
+									</label>
+									<label>
+										<input type='radio' name='package' value='expressLarge' ng-model='bookCtrl.package'/>
+										<span>Large</span>
+										<span class="label label-info">£18</span>
+									</label>
+								</div>
+								<div class="wash-type">
+									<h4>Bronze package</h4>
+									<label>
+										<input type='radio' name='package' value='bronzeSmall' ng-model='bookCtrl.package'/>
+										Small
+										<span class="label label-info">£19</span>
+									</label>
+									<label>
+										<input type='radio' name='package' value='bronzeLarge' ng-model='bookCtrl.package'/>
+										Large
+										<span class="label label-info">£22</span>
+									</label>
+								</div>
+								<div class="wash-type">
+									<h4>Silver package</h4>
+									<label>
+										<input type='radio' name='package' value='silverSmall' ng-model='bookCtrl.package'/>
+										Small
+										<span class="label label-info">£45</span>
+									</label>
+									<label>
+										<input type='radio' name='package' value='silverLarge' ng-model='bookCtrl.package'/>
+										Large
+										<span class="label label-info">£55</span>
+									</label>
+								</div>
+								<div class="wash-type">
+									<h4>Gold package wash</h4>
+									<label>
+										<input type='radio' name='package' value='goldSmall' ng-model='bookCtrl.package'/>
+										Small
+										<span class="label label-info">£80</span>
+									</label>
+									<label>
+										<input type='radio' name='package' value='goldLarge' ng-model='bookCtrl.package'/>
+										Large
+										<span class="label label-info">£90</span>
+									</label>
+								</div>
+								<div class="wash-type">
+									<h4>Extras</h4>
+									<label>
+										<input type='checkbox' name='extra[]' value='quick-wax' ng-model='bookCtrl.extras["quickWax"]'/>
+										Quick Wax
+										<span class="label label-default">£7</span>
+									</label>
+									<label>
+										<input type='checkbox' name='extra[]' value='scotch-gard' ng-model='bookCtrl.extras["scotchGard"]'/>
+										Scotch Gard Fabric and Carpet Protector
+										<span class="label label-default">£5</span>
+									</label>
+									<label>
+										<input type='checkbox' name='extra[]' value='windscreen-washer' ng-model='bookCtrl.extras["windscreenWasher"]'/>
+										Windscreen Washer
+										<span class="label label-default">£5</span>
+									</label>
+									<label>
+										<input type='checkbox' name='extra[]' value='vip-service' ng-model='bookCtrl.extras["vipService"]'/>
+										VIP Service
+										<span class="label label-default">£10</span>
+									</label>
+									<div class="hd-wax">
+										<label>
+											<input type='checkbox' name='extra[]' value='hd-wax' ng-model='bookCtrl.hdWax.selected' ng-change='bookCtrl.hdWaxChange()'/>
+											HD Wax
+										</label>
+										<label>
+											<input type='radio' name='hd-wax' value='small' ng-model='bookCtrl.hdWax.type' ng-change='bookCtrl.hdWaxTypeChange()'/>
+											Small
+											<span class="label label-warning">£40</span>
+										</label>
+										<label>
+											<input type='radio' name='hd-wax' value='large' ng-model='bookCtrl.hdWax.type' ng-change='bookCtrl.hdWaxTypeChange()'/>
+											Large
+											<span class="label label-warning">£50</span>
+										</label>
+									</div>
+								</div>
+								<div class="wash-type">
+									<input type="number" class="tip" name="tip" placeholder="TIP" ng-model='bookCtrl.tip' style="margin-top: 10px;"/>
+								</div>
+								<div class="col-md-10 total">
+									<div class="col-md-8">
+										<h3>Total</h3>
+									</div>
+									<div class="col-md-4">
+										<h3>
+											£
+											{{bookCtrl.prices.packages[bookCtrl.package] 
+											+ (bookCtrl.extras.quickWax ? bookCtrl.prices.extras.quickWax : 0)
+											+ (bookCtrl.extras.scotchGard ? bookCtrl.prices.extras.scotchGard : 0)
+											+ (bookCtrl.extras.windscreenWasher ? bookCtrl.prices.extras.windscreenWasher : 0)
+											+ (bookCtrl.extras.vipService ? bookCtrl.prices.extras.vipService : 0)
+											+ (bookCtrl.hdWax.selected ? bookCtrl.prices.hdWax[bookCtrl.hdWax.type] : 0)
+											+ bookCtrl.tip
+										}}
+									</h3>
+
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</form>
+			</article>
+		</div>
+	</div>
+</div>
+</section>
+
+
+<!-- end of contact section -->
+
+<!-- google map api -->
+<div class="map">
+	<div class="container-fluid">
+		<div class="row">
+			<div id="map"></div> <!-- api map -->
+		</div>
+	</div>
+</div>
+
+<!-- footer starts here -->
+<footer class="footer text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="icons">
+					<a href=""><i class="fa fa-behance"></i></a>
+					<a href=""><i class="fa fa-dribbble"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+				</div>
+				<p>COPYRIGHT &copy; 2016 <a href="#">Loyalty Car Wash</a></p>
 			</div>
 		</div>
 	</div>
-		
-	<!-- footer starts here -->
-	<footer class="footer text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="icons">
-						<a href=""><i class="fa fa-behance"></i></a>
-						<a href=""><i class="fa fa-dribbble"></i></a>
-						<a href=""><i class="fa fa-twitter"></i></a>
-						<a href=""><i class="fa fa-facebook"></i></a>
-						<a href=""><i class="fa fa-linkedin"></i></a>
-					</div>
-					<p>COPYRIGHT &copy; 2016 <a href="#">Loyalty Car Wash</a></p>
-				</div>
-			</div>
-		</div>
-	</footer>
+</footer>
 
 	<!-- script tags
 	============================================================= -->
@@ -131,11 +329,11 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 	<script src="js/gmaps.js"></script>
 	<script>
-	    var map = new GMaps({
-	      el: '#map',
-	      lat: -12.043333,
-	      lng: -77.028333
-	    });
+	var map = new GMaps({
+		el: '#map',
+		lat: -12.043333,
+		lng: -77.028333
+	});
 	</script>
 
 	<!-- bower:js -->
