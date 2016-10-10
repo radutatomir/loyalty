@@ -6,6 +6,6 @@ include('total.php');
 
 $total = computeTotal($price, $package, $extra, $hdWax, $tip);
 
-echo sendMail('a', 'b', 'c');
+echo sendMail($name, $package, $total);
 
 ?>
