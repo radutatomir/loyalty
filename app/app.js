@@ -1,4 +1,4 @@
 (function() {
 	'use strict'
-	angular.module('loyalty', [ 'angularPayments' ]);
+	angular.module('loyalty', [ 'angularPayments', 'stripe.checkout' ]);
 })();

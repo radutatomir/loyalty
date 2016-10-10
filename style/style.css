@@ -517,7 +517,8 @@ ul.nav{
 	padding: 12px;
 	color: #fff;
 }
-.contact-form input.submit-btn{
+.contact-form input.submit-btn,
+.contact-form button.submit-btn {
 	width: 160px;
 	height: 50px;
 	color: #fff;
@@ -532,7 +533,7 @@ ul.nav{
 /*map section*/
 #map{
 	width: 100%;
-	height: 370px;
+	height: 450px;
 	pointer-events: none;
 }
 /*footer section*/

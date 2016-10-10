@@ -1,9 +1,6 @@
-<?
-
-namespace Mailer;
-
-class Mailer {
-	public static function sendMail($to, $subject, $body) {
-		mail($to, $subject, $body);
-	}	
-}
+<?php
+	function sendMail($to, $subject, $body) {
+		$headers = 'From: webmaster@example.com' . "\r\n";
+		return mail($to, $subject, $body, $headers);	
+	}
+?>

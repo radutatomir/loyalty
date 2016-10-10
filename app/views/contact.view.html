@@ -1,75 +1,78 @@
+	<div class="container" ng-controller='bookingController as bookCtrl'>
+		<div class="row">
+			<div class="contact-heading">
+				<h4>get your car washed</h4>
+				<h2>Book us</h2>
+				<img class="img-responsive" src="img/daag.png" alt="">
+			</div>
+			<div class="col-md-3 col-xs-4 col-sm-4">
+				<i class="fa fa-phone"></i>
+				<p>Office: 0800 069 93 13</p>
+				<p>Mobile: 07588949199</p>
+			</div>
+			<div class="col-md-6 col-xs-4 col-sm-4">
+				<i class="fa fa-calendar"></i>
+				<p>8 am - 4 pm Winter time Monday - Saturday</p>
+				<p>8 am - 7 pm Summer time Monday - Saturday</p>
+				<p>Sunday closed</p>
+			</div>
+			<div class="col-md-3 col-xs-4 col-sm-4 clearfix">
+				<i class="fa fa-envelope-o"></i>
+				<p>info@loyaltycarwash.co.uk</p>
+			</div>
+			<div class="col-md-12 col-xs-12 col-sm-12">
+				<article class="contact-form">
+					<form name='form' novalidate ng-submit='bookCtrl.submit()'>
+						<div class="col-md-8">
+							<div class="col-md-5 col-md-offset-1 contact-form-left">
+								<input class="name" type="text" name='name' placeholder="NAME*" ng-model='bookCtrl.cust.name' required>
+								<input class="phone" type="text" name='phone' placeholder="PHONE*" ng-model='bookCtrl.cust.phone' required>
+								<input class="email" type="email" name='email' placeholder="EMAIL" ng-model='bookCtrl.cust.email'>
+							</div>
+							<div class="col-md-5 contact-form-right text-right">
+								<input class="make-model" type="text" name='model' placeholder="MAKE AND MODEL*" ng-model='bookCtrl.cust.model' required>
+								<input class="registration" type="text" name='registration' placeholder="REGISTRATION*" ng-model='bookCtrl.cust.registration' required>
+								<input class="colour" type="text" name='colour' placeholder="COLOUR*" ng-model='bookCtrl.cust.colour' required>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<input type="text" map-autocomplete class="address" id="address" name="address" placeholder="ADDRESS*" ng-model='bookCtrl.cust.address' required/>
+								<textarea name="notes" class="notes" placeholder="NOTES" rows="2" ng-model='bookCtrl.cust.notes'></textarea>
+							</div>
+							<div class="col-md-5 col-md-offset-1">
+								<input datepicker placeholder="DATE*" name='date' id="date" ng-model='bookCtrl.cust.date' ng-required='true'>
+							</div>	
+							<div class="col-md-5 text-right">
+								<select name='time' ng-model='bookCtrl.cust.time'>
+									<option value="anytime">Anytime 8am-7pm</option>
+									<option value="8-12">08:00-12:00</option>
+									<option value="12-16">12:00-16:00</option>
+									<option value="16-19">16:00-19:00</option>
+								</select>
+							</div>
 
+							<input type="button" id='pay-cash-btn' ng-disabled='form.$invalid' ng-click="bookCtrl.payCash()" class="submit-btn" value="pay cash" style="margin-right: 20px;">
 
-<div class="container" ng-controller='bookingController as bookCtrl'>
-	<div class="row">
-		<div class="contact-heading">
-			<h4>get your car washed</h4>
-			<h2>Book us</h2>
-			<img class="img-responsive" src="img/daag.png" alt="">
-		</div>
-		<div class="col-md-3 col-xs-4 col-sm-4">
-			<i class="fa fa-phone"></i>
-			<p>Office: 0800 069 93 13</p>
-			<p>Mobile: 07588949199</p>
-		</div>
-		<div class="col-md-6 col-xs-4 col-sm-4">
-			<i class="fa fa-calendar"></i>
-			<p>8 am - 4 pm Winter time Monday - Saturday</p>
-			<p>8 am - 7 pm Summer time Monday - Saturday</p>
-			<p>Sunday closed</p>
-		</div>
-		<div class="col-md-3 col-xs-4 col-sm-4 clearfix">
-			<i class="fa fa-envelope-o"></i>
-			<p>info@loyaltycarwash.co.uk</p>
-		</div>
-		<div class="col-md-12 col-xs-12 col-sm-12">
-			<article class="contact-form">
-				<form action="/your-server-side-code" method="GET">
-					<div class="col-md-8">
-						<div class="col-md-5 col-md-offset-1 contact-form-left">
-							<input class="name" type="text" placeholder="NAME*">
-							<input class="phone" type="text" placeholder="PHONE*">
-							<input class="email" type="email" placeholder="EMAIL">
-						</div>
-						<div class="col-md-5 contact-form-right text-right">
-							<input class="make-model" type="text" placeholder="MAKE AND MODEL*">
-							<input class="registration" type="text" placeholder="REGISTRATION*">
-							<input class="colour" type="text" placeholder="COLOUR">
-						</div>
-						<div class="col-md-10 col-md-offset-1">
-							<script
-						src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-						data-key="pk_test_cK02zWG0mJvqLSGkEKWQKQuB"
-						data-amount="999"
-						data-name="Loyalty Car Wash"
-						data-description="Booking"
-						data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-						data-locale="auto">
-						</script>
-							<input type="text" class="address" id="address" name="address" placeholder="ADDRESS*" />
-							<textarea name="notes" class="notes" placeholder="NOTES" rows="2"></textarea>
-						</div>
-						<div class="col-md-5 col-md-offset-1">
-							<input placeholder="DATE" id="date">
-						</div>
-						<div class="col-md-5 text-right">
-							<select>
-								<option value="0">Anytime 8am-7pm</option>
-								<option value="8">08:00-12:00</option>
-								<option value="12">12:00-16:00</option>
-								<option value="16">16:00-19:00</option>
-							</select>
-						</div>
-
-
-
-						<input type="submit" class="submit-btn" value="pay cash" style="margin-right: 20px;">
-						<input type="submit" class="submit-btn" value="pay now">
-
+							<button stripe-checkout="bookCtrl.doCheckout" class='submit-btn' ng-disabled='form.$invalid'
+							data-key="pk_test_cK02zWG0mJvqLSGkEKWQKQuB"
+							data-amount="{{(bookCtrl.prices.packages[bookCtrl.package] 
+										+ (bookCtrl.extras.quickWax ? bookCtrl.prices.extras.quickWax : 0)
+										+ (bookCtrl.extras.scotchGard ? bookCtrl.prices.extras.scotchGard : 0)
+										+ (bookCtrl.extras.windscreenWasher ? bookCtrl.prices.extras.windscreenWasher : 0)
+										+ (bookCtrl.extras.vipService ? bookCtrl.prices.extras.vipService : 0)
+										+ (bookCtrl.hdWax.selected ? bookCtrl.prices.hdWax[bookCtrl.hdWax.type] : 0)
+										+ bookCtrl.tip) * 100
+									}}"
+							data-currency="GBP"
+							data-name="Loyalty Car Wash"
+							data-description="Booking"
+							data-image="img/pay_logo.jpg"
+							data-locale="auto">
+							pay now
+						</button>
 
 					</div>
 					<div class="col-md-4">
-						<div class="service-list">
+						<div class="service-list btn-group">
 							<div class="wash-type">
 								<h4>Express wash</h4>
 								<label>
@@ -168,6 +171,7 @@
 								<div class="col-md-8">
 									<h3>Total</h3>
 								</div>
+
 								<div class="col-md-4">
 									<h3>
 										£
@@ -182,7 +186,7 @@
 								</h3>
 
 							</div>
-							
+
 						</div>
 					</div>
 				</div>

@@ -4,8 +4,8 @@
 		.module('loyalty')
 		.controller('bookingController', bookingController);
 
-	bookingController.$inject = [];
-	function bookingController() {
+	bookingController.$inject = ['bookingService'];
+	function bookingController(bookingService) {
 		var ctrl = this;
 		var extras = {
 			quickWax : false,
@@ -40,6 +40,12 @@
 		ctrl.hdWaxChange = hdWaxChange;
 		ctrl.hdWaxTypeChange = hdWaxTypeChange;
 		ctrl.prices = prices;
+		ctrl.payCash = payCash;
+		ctrl.doCheckout = doCheckout;
+		ctrl.cust = {
+			time : "anytime"
+		}
+		ctrl.package = 'expressSmall';
 	
 		activate();
 
@@ -57,6 +63,44 @@
 
 		function hdWaxTypeChange() {
 			ctrl.hdWax.selected = true;
+		}
+
+		function payCash() {
+			console.log(ctrl.cust, ctrl.package, ctrl.extras, ctrl.hdWax, ctrl.tip);
+
+			var extras = [];
+			for (var val in ctrl.extras) {
+				if (ctrl.extras[val]) {
+					extras.push(val);
+				}
+			}
+
+			var data = angular.extend({}, ctrl.cust, {
+				package : ctrl.package,
+				extra : extras,
+				hdWax : ctrl.hdWax,
+				tip : ctrl.tip
+			});
+
+			bookingService.book(data);
+		}
+
+		function doCheckout(token) {
+			var extras = [];
+			for (var val in ctrl.extras) {
+				if (ctrl.extras[val]) {
+					extras.push(val);
+				}
+			}
+
+			var data = angular.extend({}, ctrl.cust, {
+				package : ctrl.package,
+				extra : extras,
+				hdWax : ctrl.hdWax,
+				tip : ctrl.tip
+			});
+
+			bookingService.pay(token, data);
 		}
 		
 	}

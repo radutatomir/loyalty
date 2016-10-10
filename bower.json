@@ -23,6 +23,8 @@
     "animate.css": "^3.5.2",
     "modernizr": "^3.3.1",
     "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^10.0.1",
-    "eonasdan-bootstrap-datetimepicker": "^4.17.42"
+    "eonasdan-bootstrap-datetimepicker": "^4.17.42",
+    "angular-stripe-checkout": "^5.1.0",
+    "bootstrap-datepicker": "^1.6.4"
   }
 }
