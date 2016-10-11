@@ -8,7 +8,8 @@
 	function bookingService($http) {
 		var service = {
 			book : book,
-			pay : pay
+			pay : pay,
+			prices : prices
 		};
 
 		return service;
@@ -37,6 +38,12 @@
 			}, function error(response) {
 				console.log('error', response);
 			})
+		}
+
+		function prices() {
+			return $http.get('php/priceList.php').then(function(response) {
+				return response.data;
+			});
 		}
 	}
 })();

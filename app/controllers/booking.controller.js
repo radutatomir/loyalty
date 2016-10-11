@@ -14,26 +14,26 @@
 			windscreenWasher : false
 		};
 		var prices = {
-			packages : {
-				expressSmall : 15,
-				expressLarge : 18,
-				bronzeSmall : 19,
-				bronzeLarge : 22,
-				silverSmall : 45,
-				silverLarge : 55,
-				goldSmall : 80,
-				goldLarge : 90
-			},
-			extras : {
-				quickWax : 5,
-				scotchGard : 5,
-				windscreenWasher : 5,
-				vipService: 10
-			},
-			hdWax : {
-				small : 40,
-				large : 50
-			}
+			// packages : {
+			// 	expressSmall : 15,
+			// 	expressLarge : 18,
+			// 	bronzeSmall : 19,
+			// 	bronzeLarge : 22,
+			// 	silverSmall : 45,
+			// 	silverLarge : 55,
+			// 	goldSmall : 80,
+			// 	goldLarge : 90
+			// },
+			// extras : {
+			// 	quickWax : 5,
+			// 	scotchGard : 5,
+			// 	windscreenWasher : 5,
+			// 	vipService: 10
+			// },
+			// hdWax : {
+			// 	small : 40,
+			// 	large : 50
+			// }
 		};
 
 		ctrl.extras = extras;
@@ -50,7 +50,9 @@
 		activate();
 
 		function activate() {
-
+			bookingService.prices().then(function(response) {
+				prices = response;
+			});
 		}
 
 		function hdWaxChange() {
