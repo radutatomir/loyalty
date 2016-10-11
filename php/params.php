@@ -4,6 +4,7 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 
 $token = $request -> stripeToken;
+$stripeEmail = $request -> stripeEmail;
 
 $name = $request -> name;
 $email = $request -> email;

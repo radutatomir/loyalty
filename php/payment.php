@@ -1,7 +1,7 @@
 <?php
 
 function __autoload($class_name) {
-    include(dirname(__FILE__) . '/' . str_replace('\\','/',$class_name) . '.php');
+    include(dirname(__FILE__) . '/' . str_replace('\\', '/', $class_name) . '.php');
 }
 
 
@@ -22,10 +22,10 @@ try {
     "amount" => $total * 100, // Amount in cents
     "currency" => "gbp",
     "source" => $token,
+    "receipt_email" => $stripeEmail,
     "description" => "Car wash",
     "metadata" => array(
-        "name" => $name,
-        "date" => $date)
+        "name" => $name)
     ));
 
     echo "payment successful";
