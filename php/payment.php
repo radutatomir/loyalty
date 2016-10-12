@@ -4,7 +4,6 @@ function __autoload($class_name) {
     include(dirname(__FILE__) . '/' . str_replace('\\', '/', $class_name) . '.php');
 }
 
-
 include('mailer.php');
 include('params.php');
 include('total.php');
@@ -25,7 +24,8 @@ try {
     "receipt_email" => $stripeEmail,
     "description" => "Car wash",
     "metadata" => array(
-        "name" => $name)
+        "name" => $name,
+        "package" => $package)
     ));
 
     echo "payment successful";
