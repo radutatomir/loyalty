@@ -1,7 +1,7 @@
 <?php 
 $price = array(
 	"package" => array(
-		"expressSmall" => 10,
+		"expressSmall" => 15,
 		"expressLarge" => 18,
 		"bronzeSmall" => 19,
 		"bronzeLarge" => 22,

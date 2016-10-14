@@ -17,11 +17,7 @@
 		function book(data) {
 			console.log(data);
 
-			$http.post('php/booking.php', data).then(function success(response) {
-				console.log('success', response);
-			}, function error(response) {
-				console.log('error', response);
-			});
+			return $http.post('php/booking.php', data);
 		}
 
 		function pay(token, data) {
@@ -41,9 +37,28 @@
 		}
 
 		function prices() {
-			return $http.get('php/priceList.php').then(function(response) {
-				return response.data;
-			});
+			return {
+				packages : {
+					expressSmall : 15,
+					expressLarge : 18,
+					bronzeSmall : 19,
+					bronzeLarge : 22,
+					silverSmall : 45,
+					silverLarge : 55,
+					goldSmall : 80,
+					goldLarge : 90
+				},
+				extras : {
+					quickWax : 5,
+					scotchGard : 5,
+					windscreenWasher : 5,
+					vipService: 10
+				},
+				hdWax : {
+					small : 40,
+					large : 50
+				}
+			};
 		}
 	}
 })();

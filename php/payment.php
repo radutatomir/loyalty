@@ -10,6 +10,9 @@ include('total.php');
 
 \Stripe\Stripe::setApiKey("sk_test_Y5opqkfx2fvZ3SsOQyUBJ3vM");
 
+
+$token = $request -> stripeToken;
+
 $total = computeTotal($price, $package, $extra, $hdWax, $tip);
 
 echo $total;
@@ -21,11 +24,12 @@ try {
     "amount" => $total * 100, // Amount in cents
     "currency" => "gbp",
     "source" => $token,
-    "receipt_email" => $stripeEmail,
+    "receipt_email" => $email,
     "description" => "Car wash",
     "metadata" => array(
         "name" => $name,
-        "package" => $package)
+        "package" => $package,
+        "tip" => $tip)
     ));
 
     echo "payment successful";

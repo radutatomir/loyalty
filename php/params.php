@@ -3,9 +3,6 @@
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 
-$token = $request -> stripeToken;
-$stripeEmail = $request -> stripeEmail;
-
 $name = $request -> name;
 $email = $request -> email;
 $phone = $request -> phone;
@@ -22,8 +19,8 @@ $notes = $request -> notes;
 
 $package = $request -> package;
 $extra = $request -> extra;
-$hdWax = $request -> hdWax;
-$tip = $request -> tip;
+$hdWax = isset($request -> hdWax) ? $request -> hdWax : null;
+$tip = isset($request -> tip) ? $request -> tip : 0;
 
 
 // $name = $_POST['name'];
