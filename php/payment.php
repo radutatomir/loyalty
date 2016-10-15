@@ -10,14 +10,9 @@ include('total.php');
 
 \Stripe\Stripe::setApiKey("sk_test_Y5opqkfx2fvZ3SsOQyUBJ3vM");
 
-
 $token = $request -> stripeToken;
 
 $total = computeTotal($price, $package, $extra, $hdWax, $tip);
-
-echo $total;
-
-echo $token;
 
 try {
     $charge = \Stripe\Charge::create(array(
@@ -32,13 +27,28 @@ try {
         "tip" => $tip)
     ));
 
-    echo "payment successful";
-    echo sendMail($name, $package, $total);
+    $response = array(
+        "status" => 200,
+        "message" => "Payment succesful."
+        );
+
+    echo json_encode($response);
 
 } catch(\Stripe\Error\Card $e) {
-    echo "payment has been rejected";
+    $response = array(
+        "status" => "400",
+        "message" => "Card rejected.");
+
+    echo json_encode($response);
+
 } catch (\Stripe\Error\ApiConnection $conn) {
-    echo "could not connect";
+    
+    $response = array(
+        "status" => "500",
+        "message" => "Payment failed.");
+    
+    echo json_encode($response);
+    
 }
 
 ?>

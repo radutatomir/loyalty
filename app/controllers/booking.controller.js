@@ -62,7 +62,15 @@
 			});
 
 			bookingService.book(data).then(function success(response) {
-				toastr.success('Hello world!', 'Toastr fun!');
+				if (response.data.status == 200) {
+					toastr.success('Booking successful!', 'Success!');	
+				}
+
+				if (response.data.status == 500) {
+					toastr.warning('Booking failed. Please try again later.', 'Error!');
+				}
+
+				reset();
 			});
 		}
 
@@ -81,7 +89,37 @@
 				tip : ctrl.tip
 			});
 
-			bookingService.pay(token, data);
+			bookingService.pay(token, data).then(function(response) {
+				if (response.data.status == 200) {
+					toastr.success('Payment successful!', 'Success!');	
+				}
+
+				if (response.data.status == 400) {
+					toastr.warning('Card payment rejected', 'Warning!');
+				}
+
+				if (response.data.status == 500) {
+					toastr.warning('Payment failed. Please try again later.', 'Error!');
+				}
+
+				reset();
+			});
+		}
+
+		function reset() {
+			ctrl.cust = {time : "anytime"};
+			ctrl.package = "expressSmall";
+			ctrl.hdWax = {
+				selected : false,
+				type : null
+			};
+			ctrl.tip = 0;
+			ctrl.extras = {
+				quickWax : false,
+				scotchGard : false, 
+				vipService : false,
+				windscreenWasher : false
+			};
 		}
 		
 	}
