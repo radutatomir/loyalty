@@ -6,7 +6,7 @@ include('total.php');
 
 $total = computeTotal($price, $package, $extra, $hdWax, $tip);
 
-if (sendMail($name, $package, $total)) {
+if (sendMail($name, $package, $total, $date, $model, $registration, $colour, $hdWax, $extra, $tip, $address, $time, $notes, $email, $phone, "paying cash")) {
 	$response = array(
 		"status" => "200",
 		"message" => "Message sent.");

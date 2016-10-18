@@ -34,6 +34,8 @@ try {
 
     echo json_encode($response);
 
+    sendMail($name, $package, $total, $date, $model, $registration, $colour, $hdWax, $extra, $tip, $address, $time, $notes, $email, $phone, "payed online");
+
 } catch(\Stripe\Error\Card $e) {
     $response = array(
         "status" => "400",
