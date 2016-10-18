@@ -6,8 +6,8 @@
 		$subject = 'New booking ' . $date;
 		$body = "Hello Loyalty!\n"
 		. "\t You have a new booking on " . $date . "\n\n"
-		. "Car type: " . $model . ", Registration: " . $registration . ", Colour: " . $colour . "Service: " . $package 
-																												. ($hdWax -> selected ? "hdWax: " . $hdWax -> type . ", " : "")
+		. "Car type: " . $model . ", Registration: " . $registration . ", Colour: " . $colour . "Service: " . $package
+																												. ($hdWax -> selected ? " hdWax: " . $hdWax -> type . ", " : "")
 																												. ($extra ? join(', ', $extra) : "") . "\n"
 		. "Total: " . $total . ", of which tip: " . $tip . ", " . $pay . "\n\n"																												
 		. "Car location: " . $address . ", \n"

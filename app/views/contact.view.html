@@ -27,7 +27,7 @@
 							<div class="col-md-5 col-md-offset-1 contact-form-left">
 								<input class="name" type="text" name='name' placeholder="NAME*" ng-model='bookCtrl.cust.name' required>
 								<input class="phone" type="text" name='phone' placeholder="PHONE*" ng-model='bookCtrl.cust.phone' required>
-								<input class="email" type="email" name='email' placeholder="EMAIL" ng-model='bookCtrl.cust.email'>
+								<input class="email" type="email" name='email' placeholder="EMAIL*" ng-model='bookCtrl.cust.email' required>
 							</div>
 							<div class="col-md-5 contact-form-right text-right">
 								<input class="make-model" type="text" name='model' placeholder="MAKE AND MODEL*" ng-model='bookCtrl.cust.model' required>
@@ -50,7 +50,7 @@
 								</select>
 							</div>
 
-							<input type="button" id='pay-cash-btn' ng-disabled='form.$invalid' ng-click="bookCtrl.payCash()" class="submit-btn" value="pay cash" style="margin-right: 20px;">
+							<input type="button" id='pay-cash-btn' ng-disabled='form.$invalid' ng-click="bookCtrl.payCash()" class="submit-btn" value="pay with the operator" style="margin-right: 20px;">
 
 							<button stripe-checkout="bookCtrl.doCheckout" class='submit-btn' ng-disabled='form.$invalid'
 							data-key="pk_test_cK02zWG0mJvqLSGkEKWQKQuB"
@@ -68,7 +68,7 @@
 							data-image="img/pay_logo.jpg"
 							data-locale="auto"
 							data-email="{{bookCtrl.cust.email}}">
-							pay with the operator
+							pay now
 						</button>
 
 					</div>
